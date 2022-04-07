@@ -3,47 +3,21 @@ import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FiShare } from "react-icons/fi";
+import Resize from "./Resize";
+import Trim from "./Trim";
+import Trimm from "./Trimm";
 
 
 const Home = () => {
 
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-
-    const [videoLink, setVideoLink] = useState(null)
-    const handleVideoUpload = (e) => {
-        e.preventDefault()
-        setVideoLink(URL.createObjectURL(e.target.files[0]))
-
-    }
-
-    useEffect(() => {
-        if (videoLink) {
-            navigate("/editpage")
-        }
-        console.log(videoLink);
-        localStorage.setItem("myvideo", videoLink)
-        dispatch({ type: "SET_VIDEO", payload: videoLink })
-    }, [videoLink])
     return (
         <>
             <Navbar />
             <div className="headings">
 
-                <h1>Trim Video</h1>
-                <p>Trim and cut video to the perfect length with Kapwing</p>
-                <div className="upload_btn">
-                    <div class="mb-3">
-                        <form action="">
-                            <label htmlFor="upload" className="custom-file-upload">
-
-                                <input className="form-control form-control-sm inputColor" type="file" id="upload" onChange={handleVideoUpload} />
-                                <FiShare />
-                                Upload File
-                            </label>
-                        </form>
-                    </div>
-                </div>
+                <Resize />
+                <Trim />
+                {/* <Trimm/>  */}
             </div>
 
         </>);

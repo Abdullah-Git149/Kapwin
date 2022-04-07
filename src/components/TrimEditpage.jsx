@@ -1,17 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import ReactPlayer from "react-player";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { MdFitScreen, MdOutlineFitScreen, MdOutlineAdd, MdOutlineRemove } from "react-icons/md";
 
 
-const EditPage = () => {
-    const { videolink } = useSelector((state) => state.VideoReducer);
+const TrimEditPage = () => {
+    const { trimVideoLink } = useSelector((state) => state.VideoReducer);
     const [count, setCount] = useState(100)
     
-    const data = localStorage.getItem("myvideo")
-    console.log("check", data);
-    console.log("edit", videolink);
-    console.log("sx lcaol", data)
+    const data = localStorage.getItem("myvideooo")
+
     console.log(count)
     const Decrement = () => {
         setCount(count - 1)
@@ -58,7 +56,7 @@ const EditPage = () => {
                 <div className="upper">
 
                     <h1 style={{ color: "white" }}>Video Resize</h1>
-                    <button>Export Video</button>
+                    <button>Export zzzVideo</button>
                 </div>
                 <div className="container-fluid">
                     <div className="row">
@@ -100,4 +98,4 @@ const EditPage = () => {
         </>);
 }
 
-export default EditPage;
+export default TrimEditPage;
