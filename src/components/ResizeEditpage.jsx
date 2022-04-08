@@ -7,11 +7,9 @@ import { MdFitScreen, MdOutlineFitScreen, MdOutlineAdd, MdOutlineRemove } from "
 const ResizeEditPage = () => {
     const { videolink } = useSelector((state) => state.VideoReducer);
     const [count, setCount] = useState(100)
-    
-    const data = localStorage.getItem("myvideo")
-    console.log("check", data);
-    console.log("edit", videolink);
-    console.log("sx lcaol", data)
+
+
+
     console.log(count)
     const Decrement = () => {
         setCount(count - 1)
@@ -51,7 +49,8 @@ const ResizeEditPage = () => {
         // }
         console.log(select)
     }
-
+    const data = localStorage.getItem("myvideo")
+   
     return (
         <>
             <div className="editpage">

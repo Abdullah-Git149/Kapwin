@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FiShare } from "react-icons/fi";
 
 
@@ -26,7 +26,7 @@ const Resize = () => {
     }, [videoLink])
     return (
         <>
-          
+
             <div className="headings">
 
                 <h1>Resize Video</h1>
@@ -35,8 +35,9 @@ const Resize = () => {
                     <div class="mb-3">
                         <form action="">
                             <label htmlFor="upload" className="custom-file-upload">
-
-                                <input className="form-control form-control-sm inputColor" type="file" id="upload" onChange={handleVideoUpload} />
+                       
+                                    <input className="form-control form-control-sm inputColor" type="file" id="upload" onChange={handleVideoUpload} />
+                         
                                 <FiShare />
                                 Upload File
                             </label>
@@ -45,7 +46,7 @@ const Resize = () => {
                 </div>
 
 
-                
+
 
             </div>
 

@@ -1,14 +1,14 @@
-import { useSelector, useDispatch } from "react-redux";
-import ReactPlayer from "react-player";
-import {  useState } from "react";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 import { MdFitScreen, MdOutlineFitScreen, MdOutlineAdd, MdOutlineRemove } from "react-icons/md";
+import VideoEditor from "../Video_Editor/VideoEditor";
 
 
 const TrimEditPage = () => {
     const { trimVideoLink } = useSelector((state) => state.VideoReducer);
     const [count, setCount] = useState(100)
-    
-    const data = localStorage.getItem("myvideooo")
+
+    const data = localStorage.getItem("myvideo")
 
     console.log(count)
     const Decrement = () => {
@@ -55,15 +55,17 @@ const TrimEditPage = () => {
             <div className="editpage">
                 <div className="upper">
 
-                    <h1 style={{ color: "white" }}>Video Resize</h1>
-                    <button>Export zzzVideo</button>
+                    <h1 style={{ color: "white" }}>Trim Video</h1>
+                    <button>Export Video</button>
                 </div>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-9 col-md-6 col-sm-12 editpage_1" >
-                            <div className="resize">
+                            {/* <div className="resize">
                                 <ReactPlayer url={data} loop={true} width="100%" height="100%" controls={true} />
-                            </div>
+                            </div> */}
+
+                            <VideoEditor />
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-12 editpage_2" >
                             <div className="slider">
@@ -90,7 +92,6 @@ const TrimEditPage = () => {
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

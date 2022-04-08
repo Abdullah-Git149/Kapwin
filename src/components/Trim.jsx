@@ -21,7 +21,7 @@ const Trim = () => {
             navigate("/trim")
         }
         console.log(videoTrimLink);
-        localStorage.setItem("myvideooo", videoTrimLink)
+        localStorage.setItem("myvideo", videoTrimLink)
         dispatch({ type: "SET_TRIM_VIDEO", payload: videoTrimLink })
     }, [videoTrimLink])
     return (
@@ -33,8 +33,9 @@ const Trim = () => {
                     <div class="mb-3">
                         <form action="">
                             <label htmlFor="upload" className="custom-file-upload">
-
-                                <input className="form-control form-control-sm inputColor" type="file" id="upload" onChange={handleVideoUploadd} />
+                            
+                                    <input className="form-control form-control-sm inputColor" type="file" id="upload" onChange={handleVideoUploadd} />
+                             
                                 <FiShare />
                                 Upload Filee
                             </label>

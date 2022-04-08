@@ -1,11 +1,11 @@
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FiShare } from "react-icons/fi";
 import Resize from "./Resize";
 import Trim from "./Trim";
-import Trimm from "./Trimm";
+
 
 
 const Home = () => {
@@ -14,13 +14,14 @@ const Home = () => {
         <>
             <Navbar />
             <div className="headings">
-
                 <Resize />
-                <Trim />
-                {/* <Trimm/>  */}
+
+                <Link to="/page2">Go to Trim Page</Link>
+                {/* <Trim /> */}
             </div>
 
-        </>);
+        </>
+    );
 }
 
 export default Home;
