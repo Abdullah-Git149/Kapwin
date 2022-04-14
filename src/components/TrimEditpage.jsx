@@ -1,54 +1,23 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { MdFitScreen, MdOutlineFitScreen, MdOutlineAdd, MdOutlineRemove } from "react-icons/md";
 import VideoEditor from "../Video_Editor/VideoEditor";
 
 
 const TrimEditPage = () => {
     const { trimVideoLink } = useSelector((state) => state.VideoReducer);
-    const [count, setCount] = useState(100)
+
 
     const data = localStorage.getItem("myvideo")
 
-    console.log(count)
-    const Decrement = () => {
-        setCount(count - 1)
-    }
-    const Increment = () => {
-        setCount(count + 1)
-    }
+
     const changeValue = (e) => {
         console.log(e.target.value)
-        const select = document.getElementById("demo").innerHTML = `<select name="cars" id="cars" className="select_design"><option  value="Instagram">Instagram</option><option value="Facebook">Facebook</option><option value="Youtube">Youtube</option><option value="Vimeo">Vimeo</option></select>`
-        const selec1 = document.getElementById("demo1").innerHTML = `<select name="cars" id="cars" className="select_design"><option  value="Feed LandScape">Feed LandScape</option><option value="Portrait">Portrait</option></select>`
-        // const mySelect = document.getElementById("demo")
-        // let newoption = document.createElement("select")
-        // const select = mySelect.appendChild(newoption)
-        // const socialList = ["Instagram", "Facebook", "Youtube"]
-        // for (let social of socialList) {
-        //     let newOptionItem = document.createElement("option")
-        //     newOptionItem.innerText = social
-        //     select.appendChild(newOptionItem)
-        // }
-        console.log(select)
+
+
+
 
     }
-    const changeValue2 = (e) => {
-        console.log(e.target.value)
-        const select = document.getElementById("demo").innerHTML = `<select name="cars" id="cars"><option value="Aspect Ratio 16:9">Aspect Ratio 16:9</option><option value="Aspect Ratio 4:3">Aspect Ratio 4:3</option><option value="Aspect Ratio 21:9">Aspect Ratio 21:9</option><option value="audi">Audi</option></select>`
-        const selec1 = document.getElementById("demo1").innerHTML = `<select name="cars" id="cars" className="select_design"><option  value="Feed LandScape">Feed LandScape</option><option value="Portrait">Portrait</option></select>`
 
-        // const mySelect = document.getElementById("demo")
-        // let newoption = document.createElement("select")
-        // const select = mySelect.appendChild(newoption)
-        // const socialList = ["vimeo", "Facebook", "Youtube"]
-        // for (let social of socialList) {
-        //     let newOptionItem = document.createElement("option")
-        //     newOptionItem.innerText = social
-        //     select.appendChild(newOptionItem)
-        // }
-        console.log(select)
-    }
 
     return (
         <>
@@ -61,35 +30,47 @@ const TrimEditPage = () => {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-9 col-md-6 col-sm-12 editpage_1" >
-                            {/* <div className="resize">
-                                <ReactPlayer url={data} loop={true} width="100%" height="100%" controls={true} />
-                            </div> */}
+                            <div className="trim">
+                                <VideoEditor />
 
-                            <VideoEditor />
+                                {/* <ReactPlayer url={data} loop={true} width="100%" height="100%" controls={true} /> */}
+                            </div>
+
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-12 editpage_2" >
                             <div className="slider">
                                 <div className="ratioBtn">
-                                    <label htmlFor="present">Preset</label>
-                                    <input type="radio" name="selectMode" id="preset" value="preset" onClick={changeValue} />
-                                    <label htmlFor="custom">Custom</label>
-                                    <input type="radio" name="selectMode" id="preset" value="custom" onClick={changeValue2} />
+                                    <span> <label htmlFor="present"> Extract Selected</label></span>
+                                    <input type="radio" name="selectMode" id="preset" value="preset" onClick={changeValue} style={{marginRight:"5px"}}/>
+                                    <label htmlFor="custom">Delete Selected</label>
+                                    <input type="radio" name="selectMode" id="preset" value="custom" onClick={changeValue} />
                                 </div>
-                                <div>
-                                    <p id="demo"></p>
-                                    <p id="demo1"></p>
 
-                                </div>
-                                <div className="slider_1">
+                                {/* <div className="slider_1">
                                     <button><MdFitScreen /> Fit</button>
                                     <button><MdOutlineFitScreen /> Fill</button>
+                                </div> */}
+                                <div className="time_section">
+                                    <span>Cut from ,sec </span>
+
+                                    <div className="input__parent">
+                                        <input type="text" className="inputs" disabled />
+                                        <span>to</span>
+                                        <input type="text" className="inputs" disabled />
+                                    </div>
                                 </div>
-                                <div className="slider_2">
-                                    <ul>
-                                        <li onClick={Decrement} ><MdOutlineRemove /> </li>
-                                        <li>{count}</li>
-                                        <li onClick={Increment}><MdOutlineAdd /> </li>
-                                    </ul>
+
+                                <div>
+                                    <label htmlFor="crossFade">Crossfade</label>
+                                    <input type="radio" id="crossfade" style={{margin:"5px"}}/>
+                                </div>
+                                <div className="video_option">
+                                    <select name="" id="">
+                                        <option value="Mp4">Mp4</option>
+                                        <option value="AVI">AVI</option>
+                                        <option value="MKV">MKV</option>
+                                        <option value="webm">webm</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

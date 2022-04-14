@@ -50,7 +50,7 @@ const ResizeEditPage = () => {
         console.log(select)
     }
     const data = localStorage.getItem("myvideo")
-   
+
     return (
         <>
             <div className="editpage">

@@ -19,7 +19,7 @@ const Home = () => {
                 <Link to="/page2">Go to Trim Page</Link>
                 {/* <Trim /> */}
             </div>
-
+        
         </>
     );
 }

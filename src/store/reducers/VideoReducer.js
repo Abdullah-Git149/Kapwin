@@ -1,6 +1,7 @@
 const initState = {
     videolink: null,
-    trimVideoLink: null
+    trimVideoLink: null,
+    trimTime: []
 }
 
 const VideoReducer = (state = initState, action) => {
@@ -8,6 +9,8 @@ const VideoReducer = (state = initState, action) => {
         return { ...state, videolink: action.payload }
     } else if (action.type === "SET_TRIM_VIDEO") {
         return { ...state, trimVideoLink: action.payload }
+    } else if (action.type === "SAVE_TIME") {
+        return { ...state, trimTime: action.payload }
     } else {
 
         return state

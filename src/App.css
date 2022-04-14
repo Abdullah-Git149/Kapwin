@@ -108,6 +108,14 @@
   background-color: #7795F8;
   justify-content: space-between;
   padding: 10px;
+
+}
+
+.upper button:hover {
+  background-color: white;
+  color: #7795F8;
+  border: 4px solid  #7795F8;
+  transition: 0.5s ease;
 }
 
 .upper button {
@@ -155,20 +163,56 @@ input[type="file"] {
   color: white;
 }
 
+.video_option {
+  width: 100%;
+  background-color: aqua;
+}
+
+.video_option select {
+  width: 100%;
+  text-align: center;
+  background-color: #4f6dd1;
+  color: white;
+  cursor: pointer;
+
+
+}
+
+.time_section {
+  width: 90%;
+  text-align: center;
+
+  color: gray;
+}
+
+.inputs {
+  width: 35%;
+  background-color: #252935;
+  border: 1px solid gray;
+}
+
+.input__parent {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-around;
+
+
+}
 
 /* ================= MEDIA QUERY =========== */
 
 @media (max-width: 660px) {
 
-  .resize{
+  .resize {
     width: 80%;
     height: 80%;
   }
 
 }
+
 @media (max-width: 880px) {
-  
-  .resize{
+
+  .resize {
     width: 70%;
     height: 70%;
   }
