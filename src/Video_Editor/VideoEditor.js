@@ -76,6 +76,7 @@ class VideoEditor extends React.Component {
             isUpload: false,
             videoUrl: fileUrl
         })
+        console.log(fileUrl)
     }
 
     render = () => {

@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import VideoEditor from "../Video_Editor/VideoEditor";
-
+import { FaPlus, FaCcMastercard } from "react-icons/fa";
 
 const TrimEditPage = () => {
     const { trimVideoLink } = useSelector((state) => state.VideoReducer);
@@ -12,13 +11,19 @@ const TrimEditPage = () => {
 
     const changeValue = (e) => {
         console.log(e.target.value)
-
-
-
-
     }
 
+    const addTimeInput = () => {
+        const div = document.getElementById("timeInput")
+        const input = document.createElement("input")
+        const input2 = document.createElement("input")
+        const p = document.createElement("p")
 
+
+        input.classList.add("inputs")
+        input2.classList.add("inputs")
+        div.append(input, p.innerHTML = "to", input2)
+    }
     return (
         <>
             <div className="editpage">
@@ -41,7 +46,7 @@ const TrimEditPage = () => {
                             <div className="slider">
                                 <div className="ratioBtn">
                                     <span> <label htmlFor="present"> Extract Selected</label></span>
-                                    <input type="radio" name="selectMode" id="preset" value="preset" onClick={changeValue} style={{marginRight:"5px"}}/>
+                                    <input type="radio" name="selectMode" id="preset" value="preset" onClick={changeValue} style={{ marginRight: "5px" }} />
                                     <label htmlFor="custom">Delete Selected</label>
                                     <input type="radio" name="selectMode" id="preset" value="custom" onClick={changeValue} />
                                 </div>
@@ -53,16 +58,19 @@ const TrimEditPage = () => {
                                 <div className="time_section">
                                     <span>Cut from ,sec </span>
 
+
                                     <div className="input__parent">
                                         <input type="text" className="inputs" disabled />
                                         <span>to</span>
                                         <input type="text" className="inputs" disabled />
                                     </div>
+                                    <button onClick={addTimeInput}><FaPlus /></button>
+                                    <div id="timeInput"></div>
                                 </div>
 
                                 <div>
                                     <label htmlFor="crossFade">Crossfade</label>
-                                    <input type="radio" id="crossfade" style={{margin:"5px"}}/>
+                                    <input type="radio" id="crossfade" style={{ margin: "5px" }} />
                                 </div>
                                 <div className="video_option">
                                     <select name="" id="">

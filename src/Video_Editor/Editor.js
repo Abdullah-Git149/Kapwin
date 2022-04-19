@@ -4,9 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeMute, faVolumeUp, faPause, faPlay, faGripLinesVertical, faSync, faStepBackward, faStepForward, faCamera, faDownload, faEraser } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch } from 'react-redux';
 
+// const mapStateToProps = (state) => {
+//     return {
+//         VideoReducer: state.VideoReducer
+//     }
+// }
+
+// const mapDispatchToProps = () => {
+//     return {
+    
+//     }
+// }
 
 class Editor extends React.Component {
- 
+
     constructor(props) {
         super(props);
         this.state = {
@@ -284,7 +295,7 @@ class Editor extends React.Component {
     }
 
     saveVideo = () => {
-      
+
 
         var metadata = {
             "trim_times": this.state.timings,
